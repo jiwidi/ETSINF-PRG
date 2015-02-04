@@ -1,7 +1,7 @@
 package AronsonPuzzle1;
 
 /**
- * AronsonPuzzle1.Test - Tests the AronsonPuzzle1.Test methods.
+ * AronsonPuzzle1.Test - Tests the AronsonPuzzle1.Exercise methods.
  * Tests the general cases against known working examples from 'trusty' online education sources.
  * Tests the trivial cases against their definitions.
  *
