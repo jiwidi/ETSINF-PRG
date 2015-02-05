@@ -4,11 +4,10 @@ package AronsonPuzzle1;
  * AronsonPuzzle1.Test - Tests the AronsonPuzzle1.Exercise methods.
  * Tests the general cases against known working examples from 'trusty' online education sources.
  * Tests the trivial cases against their definitions.
- *
+ * <p/>
  * Created by jevepa on 2/4/15.
  * TODO: raise exceptions instead of S.o.p errors
  * TODO: and maybe add more debugging output?
- *
  */
 public class Test {
 
@@ -21,16 +20,16 @@ public class Test {
         System.out.println();
         testSumf(a);
         System.out.println();
-        testGcd(a,b);
+        testGcd(a, b);
         System.out.println();
     }
 
-    private static void testFib(int index){
+    private static void testFib(int index) {
         System.out.println("Testing Fibonacci sequence implementation against trusted one...");
 
-        if (index<0) {
+        if (index < 0) {
             System.out.println("> Input was a negative integer! Inversing...");
-            index=-index; // make sure the index is positive
+            index = -index; // make sure the index is positive
         }
 
         // test fib general case against literateprograms.org implementation
@@ -41,7 +40,7 @@ public class Test {
         printif(fibg);
 
         // output debug info if mismatch
-        if (!fibg){
+        if (!fibg) {
             System.out.println(">> ARONSON: " + fib1a);
             System.out.println(">> TRUSTED: " + fib1g);
         }
@@ -60,7 +59,7 @@ public class Test {
         printif(fibn && fibt && fibg);
     }
 
-    private static void testSumf(int number){
+    private static void testSumf(int number) {
         int trivial = 4; // lesser than 10 -> this should be random
 
         System.out.println("Testing sum of figures of an integer implementation against trusted one...");
@@ -72,7 +71,7 @@ public class Test {
         printif(sumg);
 
         // output debug info if mismatch
-        if (!sumg){
+        if (!sumg) {
             System.out.println(">> ARONSON: " + sum1a);
             System.out.println(">> TRUSTED: " + sum1g);
         }
@@ -82,26 +81,26 @@ public class Test {
         printif(sumt);
 
         System.out.print("> Testing for negative input. - ");
-        boolean sumn =       Exercise.sumf(-number) == sumf(number);
+        boolean sumn = Exercise.sumf(-number) == sumf(number);
         printif(sumn);
 
         System.out.print("Result of the sum of figures implementation: ");
         printif(sumg && sumt && sumn);
     }
 
-    private static void testGcd(int a, int b){
+    private static void testGcd(int a, int b) {
 
         System.out.println("Testing Euclidean GCD implementation against trusted one...");
         // test sum of figures general case against javaforstudents.co.uk implementation
-        System.out.print("> Testing for the general case. Calculating GCD of (" + a + "," + b +"). - ");
+        System.out.print("> Testing for the general case. Calculating GCD of (" + a + "," + b + "). - ");
         int gcd1a = Exercise.gcd(a, b);
-        int gcd1g = gcd(a,b);
+        int gcd1g = gcd(a, b);
         boolean gcd1 = gcd1a == gcd1g;
         printif(gcd1);
 
-        System.out.print("> Testing for the general case. Calculating GCD of (" + b + "," + a +"). - ");
+        System.out.print("> Testing for the general case. Calculating GCD of (" + b + "," + a + "). - ");
         int gcd2a = Exercise.gcd(b, a);
-        int gcd2g = gcd(b,a);
+        int gcd2g = gcd(b, a);
         boolean gcd2 = gcd2a == gcd2g;
         printif(gcd2);
 
@@ -114,7 +113,7 @@ public class Test {
         printif(gcdzero);
 
         System.out.print("> Testing for negative input. - ");
-        boolean gcdneg = Exercise.gcd(-a, b) == gcd(a,b) && Exercise.gcd(a, -b) == gcd(a,b);
+        boolean gcdneg = Exercise.gcd(-a, b) == gcd(a, b) && Exercise.gcd(a, -b) == gcd(a, b);
         printif(gcdneg);
 
         System.out.print("Result of the Euclidean GCD implementation: ");
@@ -133,10 +132,11 @@ public class Test {
         // local variables to do the calculations.
         // loop invariant: GCD(K,M) = GCD(k,m)
         while (k != m) {
-            if (k > m)
-            { k = k-m; }
-            else
-            { m = m-k; }
+            if (k > m) {
+                k = k - m;
+            } else {
+                m = m - k;
+            }
         }
         // At this point, GCD(K,M) = GCD(k,m) = GCD(k,k) = k
         return k;
@@ -146,8 +146,8 @@ public class Test {
     private static int fib(int n) {
         // http://en.literateprograms.org/Fibonacci_numbers_%28Java%29
 
-        int prev1=0, prev2=1;
-        for(int i=0; i<n; i++) {
+        int prev1 = 0, prev2 = 1;
+        for (int i = 0; i < n; i++) {
             int savePrev1 = prev1;
             prev1 = prev2;
             prev2 = savePrev1 + prev2;
@@ -179,7 +179,7 @@ public class Test {
 
     // UTILITY STUFF
 
-    private static void printif(boolean b){
+    private static void printif(boolean b) {
         if (b) {
             System.out.println("SUCCESS!");
         } else {
