@@ -6,8 +6,11 @@ package AronsonPuzzle1;
  * Tests the trivial cases against their definitions.
  * <p/>
  * Created by jevepa on 2/4/15.
+ * PRG Workgroup "Eratostenes" of ARA group 1E1 of UPV ETSINF GII 2014/2015.
+ * <p/>
  * TODO: raise exceptions instead of S.o.p errors
  * TODO: and maybe add more debugging output?
+ * TODO: many code is repeated, refactor somehow
  */
 public class Test {
 
@@ -16,7 +19,7 @@ public class Test {
         int a = 13371337;
         int b = 42;
 
-        testFib(b);         // input a small number as it is limited by int
+        testFib(b);                         // input a small number as it is limited by int
         System.out.println();
         testSumf(a);
         System.out.println();
