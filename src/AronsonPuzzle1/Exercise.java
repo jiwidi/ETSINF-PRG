@@ -48,8 +48,8 @@ public class Exercise {
         // trivial case; both are equal
         if (a == b) return a;
         // finish condition: one of them is zero
-        if (a == 0) return b;
-        if (b == 0) return a;
+        // thanks to "Von Neumann" workgroup for the a+b tip - :D
+        if (a == 0 || b==0) return a+b;
         // make positive: avoid stack overflow
         if (a < 0) a = -a;
         if (b < 0) b = -b;

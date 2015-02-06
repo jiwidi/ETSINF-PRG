@@ -11,16 +11,16 @@ package AronsonPuzzle1;
  * TODO: raise exceptions instead of S.o.p errors
  * TODO: and maybe add more debugging output?
  * TODO: many code is repeated, refactor somehow
+ * TODO: take the integers to test with from a random source
  */
 public class Test {
 
     public static void main(String[] args) {
-        // TODO: take args from random source
         int a = 13371337;
         int b = 42;
 
         testFib(b);                         // input a small number as it is limited by int
-        System.out.println();
+        System.out.println();               // '\n' beautify
         testSumf(a);
         System.out.println();
         testGcd(a, b);
